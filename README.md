@@ -14,3 +14,6 @@ GitHub Actions
 3. Add your SimplePush Private Key and your PAT to your Github Secrets
 4. The action is scheduled to run everyday at 8:00 PM via [cron](https://en.wikipedia.org/wiki/Cron).
 5. The action will uses the two Python scripts in the repo: `check_gh.py` checks if there's any commits made today after 3 AM, if not then `push.py` will run and send a notification to your phone.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/k27dong/reminder/blob/main/LICENSE) file for details
