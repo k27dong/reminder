@@ -1,0 +1,2 @@
+simplepush==2.2.3
+PyGithub==1.58.2
