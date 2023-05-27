@@ -2,7 +2,7 @@
 
 An auto reminder that checks if you have commited anything on Github today and sends you a notification on your phone if you haven't.
 
-## Tech Stacks
+## Tech Stack
 ```
 Python
 GitHub Actions
