@@ -1,8 +1,10 @@
 name: GitHub Daily Reminder Push
 
-on:
-  schedule:
-    - cron: 0 20 * * *
+# on:
+#   schedule:
+#     - cron: 0 20 * * *
+
+on: [push]
 
 jobs:
   check-and-push:
