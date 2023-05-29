@@ -20,14 +20,14 @@ for repo in Github(pat).get_user().get_repos():
 # Hopefully this will be fixed soon.
 
 # get the correct timezone returned from the API
-target_timezone = latest_commit_time.astimezone().tzinfo
+# target_timezone = latest_commit_time.astimezone().tzinfo
 
 # convert the time to UTC, then convert it to the correct timezone, then remove the offset stamp
-latest_commit_time = (
-    latest_commit_time.replace(tzinfo=timezone.utc)
-    .astimezone(tz=target_timezone)
-    .replace(tzinfo=None)
-)
+# latest_commit_time = (
+#     latest_commit_time.replace(tzinfo=timezone.utc)
+#     .astimezone(tz=target_timezone)
+#     .replace(tzinfo=None)
+# )
 
 # Check if there's a push today after 3am
 today = datetime.now()
