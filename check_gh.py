@@ -33,6 +33,8 @@ latest_commit_time = (
 today = datetime.now()
 today = today.replace(hour=3, minute=0, second=0, microsecond=0)
 
+print(f"Today: {today}")
+
 if latest_commit_time is None or latest_commit_time < today:
     print("No commits found.")
     sys.exit(1)

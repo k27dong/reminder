@@ -1,8 +1,13 @@
 name: GitHub Daily Reminder Push
 
-on:
-  schedule:
-    - cron: 0 20 * * *
+# GitHub's Action runs everything on UTC time, and currently there's no support on changing it.
+# The goal is to run this script at 8PM everyday Toronto time, and we have to make adjustments.
+
+on: [push]
+
+# on:
+#   schedule:
+#     - cron: 0 0 * * *
 
 jobs:
   check-and-push:
