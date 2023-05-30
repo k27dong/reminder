@@ -7,7 +7,7 @@ on: [push]
 
 # on:
 #   schedule:
-#     - cron: 0 0 * * *
+#     - cron: 0 0,1 * * *
 
 jobs:
   check-and-push:
@@ -27,8 +27,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Check if timezone is correct
+        id: timezone-check
+        run: |
+          python check_tz.py && echo "correct_runtime=true" >> $GITHUB_OUTPUT
+
       - name: Check if there's update on Github
         id: check-update
+        if: steps.timezone-check.outputs.correct_runtime == 'true'
         env:
             GITHUB_PAT: ${{ secrets.PAT}}
         run: |
