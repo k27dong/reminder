@@ -9,7 +9,7 @@ import sys
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-if datetime.now(ZoneInfo("America/Toronto")).hour != 20:
+if datetime.now(ZoneInfo("America/Toronto")).hour != 13:
     print("false")
 else:
     print("true")
