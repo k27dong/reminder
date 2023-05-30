@@ -9,5 +9,5 @@ import sys
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-if datetime.now(ZoneInfo("America/Toronto")).hour != 19:
+if datetime.now(ZoneInfo("America/Toronto")).hour != 20:
     sys.exit(1)
