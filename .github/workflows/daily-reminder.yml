@@ -3,8 +3,6 @@ name: GitHub Daily Reminder Push
 # GitHub's Action runs everything on UTC time, and currently there's no support on changing it.
 # The goal is to run this script at 8PM everyday Toronto time, and we have to make adjustments.
 
-# on: [push]
-
 on:
   schedule:
     - cron: 0 0,1 * * *
@@ -20,7 +18,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
       - name: Install dependencies
         run: |
@@ -37,7 +35,7 @@ jobs:
         id: check-update
         if: steps.timezone-check.outputs.correct_runtime == 'true'
         env:
-            GITHUB_PAT: ${{ secrets.PAT}}
+          GITHUB_PAT: ${{ secrets.PAT }}
         run: |
           python check_gh.py "$GITHUB_PAT" || echo "need_phone_notification=true" >> $GITHUB_OUTPUT
 
@@ -47,4 +45,4 @@ jobs:
         env:
           SIMPLEPUSH_KEY: ${{ secrets.KEY }}
         run: |
-            python push.py "$SIMPLEPUSH_KEY"
+          python push.py "$SIMPLEPUSH_KEY"
