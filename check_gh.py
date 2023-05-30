@@ -22,6 +22,8 @@ for repo in Github(pat).get_user().get_repos():
 # is made within 17 hours of the current time. (3AM)
 today = datetime.now()
 
+print("Hours since last commit: ", today - latest_commit_time)
+
 if latest_commit_time is None or today - latest_commit_time > timedelta(hours=17):
     print("No commits found.")
     sys.exit(1)
