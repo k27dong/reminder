@@ -10,4 +10,6 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 if datetime.now(ZoneInfo("America/Toronto")).hour != 20:
-    sys.exit(1)
+    print("false")
+else:
+    print("true")

@@ -30,12 +30,8 @@ jobs:
       - name: Check if timezone is correct
         id: timezone-check
         run: |
-          python check_tz.py
-          if [ $? -eq 0 ]; then
-            echo "correct_runtime=true" >> $GITHUB_OUTPUT
-          else
-            echo "correct_runtime=false" >> $GITHUB_OUTPUT
-          fi
+          output=$(python check_tz.py)
+          echo "correct_runtime=$output" >> $GITHUB_OUTPUT
 
       - name: Check if there's update on Github
         id: check-update
